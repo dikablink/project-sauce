@@ -7,8 +7,12 @@ public class DriverWiringAAC : MonoBehaviour
     public float reachDistance = 3f;
     public float steerAngle = 25f;
     public float motorTorque = 800f;
-private List<NodeRoadAAA> nodePath = new List<NodeRoadAAA>();
-private int currentPathIndex = 0;
+
+     public float brakeTorque = 3000f;
+  //  private List<NodeRoadAAA> nodePath = new List<NodeRoadAAA>();
+    public List<NodeRoadAAA> path;
+    private int pathIndex = 0;
+    //private int currentPathIndex = 0;
     public float approachSlowdown = 0.3f; // 0 = no slowdown, 1 = full slowdown
     public float minSpeedFactor = 0.4f;   // how slow he can go at minimum
 
@@ -47,15 +51,42 @@ private int currentPathIndex = 0;
         // Switch to next node
       //  if (distanceToNode < reachDistance && currentNode.nextNode != null)
         {
-         //   currentNode = currentNode.nextNode;
+       //     currentNode = currentNode.nextNode;
+        }
+
+       
+      if (distanceToNode < reachDistance && path != null && pathIndex < path.Count - 1)
+        {
+            pathIndex++;
+            currentNode = path[pathIndex];
+        }
+ if (distanceToNode < reachDistance && pathIndex >= path.Count - 1)
+        {
+            ApplyBrakes(brakeTorque); // full brake
+            rearLeft.motorTorque = 0;
+            rearRight.motorTorque = 0;
         }
     }
-    public void SetPath(List<NodeRoadAAA> path)
+    void ApplyBrakes(float brakeAmount)
     {
-        if (path == null || path.Count == 0) return;
+        frontLeft.brakeTorque = brakeAmount;
+        frontRight.brakeTorque = brakeAmount;
+        rearLeft.brakeTorque = brakeAmount;
+        rearRight.brakeTorque = brakeAmount;
+    }
 
-        nodePath = path;
-        currentPathIndex = 0;
-        currentNode = nodePath[0]; // Start driving
+public void SetPath(List<NodeRoadAAA> newPath)
+    {
+        if (newPath == null || newPath.Count == 0)
+        {
+            Debug.LogWarning("❌ Path is null or empty.");
+            return;
+        }
+
+        path = newPath;              // ✅ assign to correct `path` variable
+        pathIndex = 0;
+        currentNode = path[pathIndex];
+
+        Debug.Log($"🚦 Path assigned with {path.Count} nodes. Starting at: {currentNode.name}");
     }
 }

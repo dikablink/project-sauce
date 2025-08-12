@@ -4,7 +4,7 @@ public class NodeRoadAAA : MonoBehaviour
 {
     [Header("Connected Nodes")]
     public List<NodeRoadAAA> connectedNodes = new List<NodeRoadAAA>();
-
+ public NodeRoadAAA nextNode;
     [Header("Debug")]
     public bool showConnections = true;
 
@@ -17,6 +17,11 @@ public class NodeRoadAAA : MonoBehaviour
         {
             if (node != null)
                 Gizmos.DrawLine(transform.position, node.transform.position);
+        }
+        if (nextNode != null)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(transform.position, nextNode.transform.position);
         }
     }
 }

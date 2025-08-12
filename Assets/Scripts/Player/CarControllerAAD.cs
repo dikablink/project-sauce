@@ -14,6 +14,7 @@ public class CarControllerAAD : MonoBehaviour
     public float minRPM = 1000f;
     public float currentRPM;
 
+    public Vector3 currentMassCenter;
     [Header("Gears")]
     public float[] gearRatios = { 3.5f, 2.5f, 1.8f, 1.2f, 0.9f };
     public int currentGear = 0;
@@ -22,7 +23,9 @@ public class CarControllerAAD : MonoBehaviour
 
     [Header("Steering")]
     public float maxSteerAngle = 30f;
-
+  [Header("Braking")]
+    public float brakeForce = 2000f;
+    public KeyCode brakeKey = KeyCode.Space;
     [Header("Debug")]
     public float displaySpeed;
     public float rpmGainRate = 3500f;
@@ -32,7 +35,7 @@ public class CarControllerAAD : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.centerOfMass = new Vector3(0, -0.5f, 0); // optional: lower center for more stability
+        rb.centerOfMass = currentMassCenter; // optional: lower center for more stability
     }
 
     
@@ -42,13 +45,13 @@ public class CarControllerAAD : MonoBehaviour
         float steerInput = Input.GetAxis("Horizontal");
 
         float gearRatio = gearRatios[currentGear];
-
+   bool isBraking = Input.GetKey(brakeKey);
         UpdateRPM(accelInput);
         ApplyMotorTorque(accelInput, gearRatio);
         ApplySteering(steerInput);
 
         displaySpeed = rb.linearVelocity.magnitude * 3.6f; // km/h
-
+ ApplyBrakes(isBraking);
         HandleGearShifting();
     }
 
@@ -72,6 +75,16 @@ public class CarControllerAAD : MonoBehaviour
 
         rearLeftWheel.motorTorque = torque;
         rearRightWheel.motorTorque = torque;
+    }
+
+    void ApplyBrakes(bool isBraking)
+    {
+        float appliedBrake = isBraking ? brakeForce : 0f;
+
+        frontLeftWheel.brakeTorque = appliedBrake;
+        frontRightWheel.brakeTorque = appliedBrake;
+        rearLeftWheel.brakeTorque = appliedBrake;
+        rearRightWheel.brakeTorque = appliedBrake;
     }
 
     void ApplySteering(float steerInput)

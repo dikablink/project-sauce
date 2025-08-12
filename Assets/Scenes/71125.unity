@@ -165,6 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedNodes:
   - {fileID: 1134093945}
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &161583943
 GameObject:
@@ -210,7 +211,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be57508032d4b8d41a72aa4fe8ab3d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedNodes: []
+  connectedNodes:
+  - {fileID: 2021737266}
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &176109888
 GameObject:
@@ -257,6 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connectedNodes: []
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &274011050
 GameObject:
@@ -342,6 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connectedNodes: []
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &333517802
 GameObject:
@@ -388,6 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connectedNodes: []
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &338392794
 GameObject:
@@ -433,7 +439,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be57508032d4b8d41a72aa4fe8ab3d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedNodes: []
+  connectedNodes:
+  - {fileID: 1168118245}
+  - {fileID: 1430687301}
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &355845508
 GameObject:
@@ -566,6 +575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connectedNodes: []
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &397955055
 GameObject:
@@ -1207,6 +1217,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedNodes:
   - {fileID: 1168118245}
+  - {fileID: 1430687301}
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &653771909
 GameObject:
@@ -1254,6 +1266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedNodes:
   - {fileID: 33463362}
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &689795365
 GameObject:
@@ -1278,7 +1291,7 @@ GameObject:
   - component: {fileID: 689795367}
   m_Layer: 0
   m_Name: Unemployed:Bob
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1352,8 +1365,12 @@ MonoBehaviour:
   npcBody: {fileID: 689795365}
   agent: {fileID: 689795368}
   carEntryPoint: {fileID: 1011141515301534644}
+  nodeGraphAAA: {fileID: 1446907364}
   carDriver: {fileID: 9134480475319718584}
-  carTargetDestination: {fileID: 1681171244105810563}
+  carEntrySystem: {fileID: 8499501785557075071}
+  startNode: {fileID: 1168118245}
+  goalNode: {fileID: 1083197075}
+  a1driver: {fileID: 689795365}
   isInCar: 0
   hasArrived: 0
 --- !u!114 &689795370
@@ -1667,6 +1684,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedNodes:
   - {fileID: 653771911}
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &750277644
 GameObject:
@@ -1749,6 +1767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedNodes:
   - {fileID: 728844744}
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &837493145
 GameObject:
@@ -1795,6 +1814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connectedNodes: []
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &923847895
 GameObject:
@@ -1842,6 +1862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedNodes:
   - {fileID: 1083197075}
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &959084837
 GameObject:
@@ -1889,7 +1910,116 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedNodes:
   - {fileID: 1675773547}
+  nextNode: {fileID: 0}
   showConnections: 1
+--- !u!1 &1036484714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1036484718}
+  - component: {fileID: 1036484717}
+  - component: {fileID: 1036484716}
+  - component: {fileID: 1036484715}
+  m_Layer: 0
+  m_Name: Cube (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1036484715
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036484714}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1036484716
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036484714}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1036484717
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036484714}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1036484718
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036484714}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.10403263, y: -0.9059067, z: 0.049689837, w: 0.40748167}
+  m_LocalPosition: {x: -1911.5134, y: 0.27, z: -1350.51}
+  m_LocalScale: {x: 7.5941324, y: 1, z: 14.056596}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0.301, y: -131.528, z: 13.237}
 --- !u!1 &1083197074
 GameObject:
   m_ObjectHideFlags: 0
@@ -1921,6 +2051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedNodes:
   - {fileID: 923847897}
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!4 &1083197076
 Transform:
@@ -1963,7 +2094,7 @@ Transform:
   m_GameObject: {fileID: 1115424921}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2108.7, y: 0, z: 27.8}
+  m_LocalPosition: {x: -2138.71, y: 0, z: 19.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1983,6 +2114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedNodes:
   - {fileID: 1513565368}
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &1134093943
 GameObject:
@@ -2030,6 +2162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedNodes:
   - {fileID: 1918892705}
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &1168118243
 GameObject:
@@ -2077,6 +2210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedNodes:
   - {fileID: 1511759916}
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &1327523004
 GameObject:
@@ -2182,7 +2316,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be57508032d4b8d41a72aa4fe8ab3d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedNodes: []
+  connectedNodes:
+  - {fileID: 338392796}
+  - {fileID: 1689638570}
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &1446907362
 GameObject:
@@ -2303,6 +2440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedNodes:
   - {fileID: 1083197075}
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &1511759914
 GameObject:
@@ -2350,6 +2488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedNodes:
   - {fileID: 959084839}
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &1513565366
 GameObject:
@@ -2377,7 +2516,7 @@ Transform:
   m_GameObject: {fileID: 1513565366}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2146.07, y: 0, z: -0.5}
+  m_LocalPosition: {x: -2174.3, y: 0, z: -30.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2398,6 +2537,7 @@ MonoBehaviour:
   connectedNodes:
   - {fileID: 794737027}
   - {fileID: 0}
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &1570296104
 GameObject:
@@ -2553,6 +2693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connectedNodes: []
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &1671966727
 GameObject:
@@ -2598,7 +2739,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be57508032d4b8d41a72aa4fe8ab3d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedNodes: []
+  connectedNodes:
+  - {fileID: 2021737266}
+  - {fileID: 1689638570}
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &1675773545
 GameObject:
@@ -2646,6 +2790,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedNodes:
   - {fileID: 1115424923}
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &1687588574
 GameObject:
@@ -2800,7 +2945,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be57508032d4b8d41a72aa4fe8ab3d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedNodes: []
+  connectedNodes:
+  - {fileID: 1671966729}
+  - {fileID: 1430687301}
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &1755691805
 GameObject:
@@ -2957,6 +3105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedNodes:
   - {fileID: 1469974046}
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &2021737264
 GameObject:
@@ -3002,7 +3151,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be57508032d4b8d41a72aa4fe8ab3d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedNodes: []
+  connectedNodes:
+  - {fileID: 161583945}
+  nextNode: {fileID: 161583945}
   showConnections: 1
 --- !u!1 &2065801626
 GameObject:
@@ -3049,6 +3200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   connectedNodes: []
+  nextNode: {fileID: 0}
   showConnections: 1
 --- !u!1 &2080956219
 GameObject:
@@ -3081,6 +3233,114 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1487181194562479286}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2130346708
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2130346712}
+  - component: {fileID: 2130346711}
+  - component: {fileID: 2130346710}
+  - component: {fileID: 2130346709}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &2130346709
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130346708}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &2130346710
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130346708}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &2130346711
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130346708}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &2130346712
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130346708}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.32590485, z: -0, w: 0.9454026}
+  m_LocalPosition: {x: -1931.8, y: 0.5, z: -1304.4}
+  m_LocalScale: {x: 199.07076, y: 1, z: 95.039375}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -38.041, z: 0}
 --- !u!114 &812606482944206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4159,7 +4419,7 @@ GameObject:
   - component: {fileID: 9134480475319718582}
   - component: {fileID: 9134480475319718584}
   m_Layer: 0
-  m_Name: MR2[71825] (1)
+  m_Name: MR2[71825] (R)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13795,7 +14055,7 @@ WheelCollider:
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
-  m_Mass: 20
+  m_Mass: 50
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 0.28
@@ -17164,7 +17424,7 @@ GameObject:
   - component: {fileID: 754728204918194766}
   m_Layer: 0
   m_Name: Doctor:Ron Remone
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18718,7 +18978,7 @@ WheelCollider:
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
-  m_Mass: 20
+  m_Mass: 50
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 0.28
@@ -22314,7 +22574,6 @@ MonoBehaviour:
   carController: {fileID: 8552678130558959148}
   carCam: {fileID: 5500577464998289233}
   playerSeat: {fileID: 0}
-  ron: {fileID: 0}
   aiModel: {fileID: 0}
   aiDriver: {fileID: 0}
   aiSeat: {fileID: 0}
@@ -22325,6 +22584,7 @@ MonoBehaviour:
   isDriving: 0
   playerInTrigger: 0
   aiInTrigger: 0
+  lockOnFirstOccupant: 1
 --- !u!108 &3628189154037216169
 Light:
   m_ObjectHideFlags: 0
@@ -24389,7 +24649,6 @@ MonoBehaviour:
   carController: {fileID: 4905466436744136650}
   carCam: {fileID: 2270192611019336156}
   playerSeat: {fileID: 0}
-  ron: {fileID: 0}
   aiModel: {fileID: 0}
   aiDriver: {fileID: 0}
   aiSeat: {fileID: 0}
@@ -24400,6 +24659,7 @@ MonoBehaviour:
   isDriving: 0
   playerInTrigger: 0
   aiInTrigger: 0
+  lockOnFirstOccupant: 1
 --- !u!4 &3989681173355384252
 Transform:
   m_ObjectHideFlags: 0
@@ -27228,7 +27488,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82e0acd8694e42546a668b64564a225e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ron: {fileID: 689795365}
   carEntrySystem: {fileID: 8499501785557075071}
 --- !u!4 &4607059018744080988
 Transform:
@@ -29436,7 +29695,7 @@ Transform:
   m_GameObject: {fileID: 2688873643386938776}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 43.4, y: 1.3399999, z: -146.9}
+  m_LocalPosition: {x: -35.3, y: 1.3399999, z: -30.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -31173,7 +31432,7 @@ GameObject:
   - component: {fileID: 8898495712706850931}
   m_Layer: 0
   m_Name: Nurse:Amy Hantheral
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40939,8 +41198,12 @@ MonoBehaviour:
   npcBody: {fileID: 5243416957603999032}
   agent: {fileID: 8898495712706850931}
   carEntryPoint: {fileID: 1011141515301534644}
-  carDriver: {fileID: 0}
-  carTargetDestination: {fileID: 8663286382103365702}
+  nodeGraphAAA: {fileID: 1446907364}
+  carDriver: {fileID: 9134480475319718584}
+  carEntrySystem: {fileID: 8499501785557075071}
+  startNode: {fileID: 1430687301}
+  goalNode: {fileID: 2021737266}
+  a1driver: {fileID: 0}
   isInCar: 0
   hasArrived: 0
 --- !u!33 &6889140034563536760
@@ -43355,7 +43618,6 @@ MonoBehaviour:
   carController: {fileID: 4698299564600559246}
   carCam: {fileID: 5845303621542811516}
   playerSeat: {fileID: 0}
-  ron: {fileID: 0}
   aiModel: {fileID: 0}
   aiDriver: {fileID: 0}
   aiSeat: {fileID: 0}
@@ -43366,6 +43628,7 @@ MonoBehaviour:
   isDriving: 0
   playerInTrigger: 0
   aiInTrigger: 0
+  lockOnFirstOccupant: 1
 --- !u!23 &7356231284364091662
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -44330,7 +44593,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137374241317200994}
   serializedVersion: 5
-  m_Mass: 556.9
+  m_Mass: 986.8
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -45779,7 +46042,7 @@ WheelCollider:
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
-  m_Mass: 20
+  m_Mass: 50
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 0.28
@@ -46788,7 +47051,7 @@ MonoBehaviour:
   hour: 10
   minute: 40
   customTime: 12
-  timeSpeed: 0.8
+  timeSpeed: 0.1
   customHour: 12
   customMinute: 0
   sunLight: {fileID: 8940718502135697485}
@@ -49355,9 +49618,8 @@ MonoBehaviour:
   player: {fileID: 8956136179265991098}
   playerController: {fileID: 4299124153608162857}
   carController: {fileID: 1549479729865345468}
-  carCam: {fileID: 68160894525993703}
+  carCam: {fileID: 8779678765354420902}
   playerSeat: {fileID: 356440054292039890}
-  ron: {fileID: 689795365}
   aiModel: {fileID: 689795365}
   aiDriver: {fileID: 9134480475319718584}
   aiSeat: {fileID: 356440054292039890}
@@ -49368,6 +49630,7 @@ MonoBehaviour:
   isDriving: 0
   playerInTrigger: 0
   aiInTrigger: 0
+  lockOnFirstOccupant: 1
 --- !u!4 &8499594165496157126
 Transform:
   m_ObjectHideFlags: 0
@@ -50158,7 +50421,7 @@ WheelCollider:
     targetPosition: 0.5
   m_SuspensionDistance: 0.3
   m_ForceAppPointDistance: 0
-  m_Mass: 20
+  m_Mass: 50
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 0.28
@@ -51530,7 +51793,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5243416957603999032}
-  m_Enabled: 0
+  m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
@@ -52956,7 +53219,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137374241317200994}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66a00435e8aee684a93e7aa670a7a03d, type: 3}
   m_Name: 
@@ -52969,6 +53232,7 @@ MonoBehaviour:
   maxRPM: 12000
   minRPM: 1000
   currentRPM: 0
+  currentMassCenter: {x: 0, y: 0.7, z: 0}
   gearRatios:
   - 3.5
   - 2.5
@@ -52979,6 +53243,8 @@ MonoBehaviour:
   shiftUpRPM: 6000
   shiftDownRPM: 2200
   maxSteerAngle: 49
+  brakeForce: 2000
+  brakeKey: 32
   displaySpeed: 0
   rpmGainRate: 3500
 --- !u!114 &9134480475319718584
@@ -52994,11 +53260,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentNode: {fileID: 0}
-  reachDistance: 5.79
-  steerAngle: 45
-  motorTorque: 440.2
-  approachSlowdown: 48.89
-  minSpeedFactor: 37.15
+  reachDistance: 3
+  steerAngle: 34
+  motorTorque: 150
+  brakeTorque: 3000
+  path: []
+  approachSlowdown: 0.8
+  minSpeedFactor: 0.2
   frontLeft: {fileID: 3015984621203952382}
   frontRight: {fileID: 2007971500629304697}
   rearLeft: {fileID: 8641538777348171194}
@@ -53387,3 +53655,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 5023409751914956758}
+  - {fileID: 2130346712}
+  - {fileID: 1036484718}
