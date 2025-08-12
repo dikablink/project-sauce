@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd6ad695701a4754cbfad5849f948dd1, type: 3}
+  m_Name: MR2
+  m_EditorClassIdentifier: 
+  topSpeed: 205
+  vehicleWeight: 1005
+  isManual: 1
+  transmissionGears:
+  - {fileID: 11400000, guid: a2b9e695ccc3fa143b116f9d7950abf8, type: 2}
+  - {fileID: 11400000, guid: 3e97b4cfcf2cc6f4cbfaa2e940156261, type: 2}
+  - {fileID: 11400000, guid: 5ba5ef77b44150748a77931b22b18c28, type: 2}
+  - {fileID: 11400000, guid: 3af7e705c18618d49ad341c6c7d83029, type: 2}
+  - {fileID: 11400000, guid: 8a618d479790c4742bc9e5c5a29d4490, type: 2}
+  - {fileID: 11400000, guid: ab96899884f2ee5448baa40b4891ae24, type: 2}
+  - {fileID: 11400000, guid: ca6a1d63969626d4797a9dc1f448f475, type: 2}
+  tireGrip: 1
+  turnRadius: 9.6
