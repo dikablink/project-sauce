@@ -107,7 +107,7 @@ public NodeRoadAAA goalNode;
     {
         isDriving = true;
 
-        Debug.Log("🧠 Ron is entering the car.");
+    //    Debug.Log("🧠 Ron is entering the car.");
        // if (aiModel != null) aiModel.SetActive(false);
 
         if (aiDriver != null && nodeGraph != null && startNode != null && goalNode != null)
